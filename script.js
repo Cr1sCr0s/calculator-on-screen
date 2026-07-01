@@ -38,7 +38,7 @@ for(const btn of opBtns) {
     continue;
   }else if(btn.textContent === '=') {
     btn.addEventListener('click', () => {
-      term2 = +(term2);
+      if((typeof term2) === 'string') term2 = +(term2);
       ans = operate(operator, term1, term2);
       if(!(Number.isInteger(ans))) ans = ans.toFixed(2);
       console.log(`ans: ${ans}`); // console.log
