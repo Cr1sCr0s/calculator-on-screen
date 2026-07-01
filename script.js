@@ -1,28 +1,72 @@
-let term1, operator, term2;
+let term1,operator,term2;
+term1 = operator = term2 = '';
+const displayExpr = document.querySelector('.calcu-expr');
+const displayResult = document.querySelector('.calcu-result');
+let ans = 0;
 
 const digitBtns = Array.from(
   (document.querySelector('.calcu-input'))
   .querySelectorAll('button'));
 
-const displayExpr = document.querySelector('.calcu-expr');
-
-for(const btn of digitBtns){
+for(const btn of digitBtns) {
   btn.addEventListener('click', () => {
-    displayExpr.textContent += btn.textContent;
-    term1 = +(displayExpr.textContent);
+    if((typeof term1) === 'number') {
+      term2 += btn.textContent;
+      console.log(`term2: ${term2}`);
+      displayExpr.textContent += btn.textContent;
+    }else {
+      term1 += btn.textContent;
+      console.log(`term1: ${term1}`);
+      displayExpr.textContent += btn.textContent;
+    }
   });
 }
+
+const opBtns = Array.from(
+  (document.querySelector('.calcu-operations'))
+  .querySelectorAll('button'));
+
+for(const btn of opBtns) {
+  if(btn.textContent === 'AC') {
+    btn.addEventListener('click', () => {
+      displayExpr.textContent = '';
+      term1 = operator = term2 = '';
+      ans = 0;
+    });
+    continue;
+  }else if(btn.textContent === '=') {
+    btn.addEventListener('click', () => {
+      term2 = +(term2);
+      ans = operate(operator, term1, term2);
+      if(!(Number.isInteger(ans))) ans = ans.toFixed(2);
+      console.log(`ans: ${ans}`);
+      displayResult.textContent = ans;
+    });
+    continue;
+  }
+
+  btn.addEventListener('click', () => {
+    operator = btn.textContent;
+    console.log(`operator: ${operator}`);
+    term1 = +(term1);
+    displayExpr.textContent += btn.textContent;
+  });
+}  
 
 function operate(operator, term1, term2) {
   switch(operator) {
     case '+':
-      add(term1, term2);
+      return add(term1, term2);
+      break;
     case '-':
-      subtract(term1, term2);
+      return subtract(term1, term2);
+      break;
     case '×':
-      multiply(term1, term2);
+      return multiply(term1, term2);
+      break;
     case '÷':
-      divide(term1, term2);
+      return divide(term1, term2);
+      break;
   }
 }
 
