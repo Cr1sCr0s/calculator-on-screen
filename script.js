@@ -58,10 +58,13 @@ for(const btn of opBtns) {
 
   btn.addEventListener('click', () => {
     if(term1 === '') return;
-    if(term2 !== '') {
+    if(!(operator === '')){
+      displayExpr.textContent = (displayExpr.textContent).slice(0, -1);
+    }
+    if(term2 !== '') {  
       term2 = +(term2);
       equalBtn.click();
-      if(ans === 0) return;
+      if(term1 === '') return; // cleared
       displayExpr.textContent = ans;
       term1 = ans;
       term2 = '';
