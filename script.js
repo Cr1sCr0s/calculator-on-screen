@@ -1,5 +1,10 @@
 let term1, operator, term2;
 
+const buttons = Array.from(
+  (document.querySelector('.calcu-btns'))
+  .querySelectorAll('button'));
+// console.log(buttons);
+
 function operate(operator, term1, term2) {
   switch(operator) {
     case '+':
