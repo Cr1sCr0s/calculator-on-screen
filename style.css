@@ -34,6 +34,7 @@ button {
   align-items: stretch;
   gap: 16px;
   max-height: 43rem;
+  max-width: 32rem;
   padding: 2rem;
 
   font-size: 3rem;
@@ -45,6 +46,10 @@ button {
 .calcu-display {
   flex: 1;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
   max-height: 12rem;
   min-height: 6rem;
   padding: 1rem;
@@ -53,6 +58,20 @@ button {
 
   background-color: rgb(31, 80, 30);
   border-radius: 1rem;
+}
+
+.calcu-expr {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+}
+
+.calcu-result {
+  align-self: end;
+
+  display: flex;
+  align-items: center;
 }
 
 .calcu-btns {
