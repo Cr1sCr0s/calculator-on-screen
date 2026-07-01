@@ -84,6 +84,14 @@ button {
   font-size: 3rem;
 }
 
+.calcu-btns button:hover {
+  filter: brightness(120%);
+}
+
+.calcu-btns button:active {
+  filter: brightness(80%);
+}
+
 .calcu-btns div {
   align-items: center;
   gap: 8px;
