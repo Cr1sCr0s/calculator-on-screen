@@ -7,12 +7,20 @@ const digitBtns = Array.from(
   .querySelectorAll('button'));
 
 for(const btn of digitBtns) {
-  btn.addEventListener('click', () => {
+  btn.addEventListener('click', (e) => {
     if((typeof term1) === 'number') {
+      if(
+        ((/\./).test(term2) || term2 === '') 
+        && e.target.textContent === '.'
+      ) return;
       term2 += btn.textContent;
       console.log(`term2: ${term2}`); // console.log
       displayExpr.textContent += btn.textContent;
     }else {
+      if(
+        ((/\./).test(term1) || term1 === '') 
+        && e.target.textContent === '.'
+      ) return;
       term1 += btn.textContent;
       console.log(`term1: ${term1}`); // console.log
       displayExpr.textContent += btn.textContent;
