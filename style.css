@@ -48,10 +48,10 @@ button {
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: stretch;
-  max-height: 12rem;
-  min-height: 6rem;
+  max-height: 14rem;
+  min-height: 9rem;
   padding: 1rem;
 
   color: rgb(85, 227, 85);
@@ -61,8 +61,6 @@ button {
 }
 
 .calcu-expr {
-  flex: 1;
-
   display: flex;
   align-items: center;
 }
