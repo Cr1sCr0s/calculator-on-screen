@@ -6,9 +6,9 @@ function operate(operator, term1, term2) {
       add(term1, term2);
     case '-':
       subtract(term1, term2);
-    case '*':
+    case '×':
       multiply(term1, term2);
-    case '/':
+    case '÷':
       divide(term1, term2);
   }
 }
