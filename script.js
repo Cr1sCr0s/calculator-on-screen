@@ -30,6 +30,7 @@ for(const btn of opBtns) {
   if(btn.textContent === 'AC') {
     btn.addEventListener('click', () => {
       displayExpr.textContent = '';
+      displayResult.textContent = '';
       term1 = operator = term2 = '';
       ans = 0;
     });
