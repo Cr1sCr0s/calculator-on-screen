@@ -1,9 +1,17 @@
 let term1, operator, term2;
 
-const buttons = Array.from(
-  (document.querySelector('.calcu-btns'))
+const digitBtns = Array.from(
+  (document.querySelector('.calcu-input'))
   .querySelectorAll('button'));
-// console.log(buttons);
+
+const displayExpr = document.querySelector('.calcu-expr');
+
+for(const btn of digitBtns){
+  btn.addEventListener('click', () => {
+    displayExpr.textContent += btn.textContent;
+    term1 = +(displayExpr.textContent);
+  });
+}
 
 function operate(operator, term1, term2) {
   switch(operator) {
