@@ -49,10 +49,10 @@ for(const btn of opBtns) {
 
   btn.addEventListener('click', () => {
     if(term2 !== '') term2 = +(term2);
-    // console.log(`term2: ${term2}`); // console.log
+
     if((typeof term2) === 'number'){
-      // console.log('I HAPPENED HELLO');
       equalBtn.click();
+      displayExpr.textContent = ans;
       term1 = ans;
       term2 = '';
     }
