@@ -1,9 +1,7 @@
 let term1,operator,term2;
 term1 = operator = term2 = '';
-const displayExpr = document.querySelector('.calcu-expr');
-const displayResult = document.querySelector('.calcu-result');
-let ans = 0;
 
+const displayExpr = document.querySelector('.calcu-expr');
 const digitBtns = Array.from(
   (document.querySelector('.calcu-input'))
   .querySelectorAll('button'));
@@ -12,11 +10,11 @@ for(const btn of digitBtns) {
   btn.addEventListener('click', () => {
     if((typeof term1) === 'number') {
       term2 += btn.textContent;
-      console.log(`term2: ${term2}`);
+      console.log(`term2: ${term2}`); // console.log
       displayExpr.textContent += btn.textContent;
     }else {
       term1 += btn.textContent;
-      console.log(`term1: ${term1}`);
+      console.log(`term1: ${term1}`); // console.log
       displayExpr.textContent += btn.textContent;
     }
   });
@@ -25,6 +23,9 @@ for(const btn of digitBtns) {
 const opBtns = Array.from(
   (document.querySelector('.calcu-operations'))
   .querySelectorAll('button'));
+const displayResult = document.querySelector('.calcu-result');
+let ans = 0;
+const equalBtn = document.querySelector('.calcu-equal');
 
 for(const btn of opBtns) {
   if(btn.textContent === 'AC') {
@@ -40,15 +41,23 @@ for(const btn of opBtns) {
       term2 = +(term2);
       ans = operate(operator, term1, term2);
       if(!(Number.isInteger(ans))) ans = ans.toFixed(2);
-      console.log(`ans: ${ans}`);
+      console.log(`ans: ${ans}`); // console.log
       displayResult.textContent = ans;
     });
     continue;
   }
 
   btn.addEventListener('click', () => {
+    if(term2 !== '') term2 = +(term2);
+    // console.log(`term2: ${term2}`); // console.log
+    if((typeof term2) === 'number'){
+      // console.log('I HAPPENED HELLO');
+      equalBtn.click();
+      term1 = ans;
+      term2 = '';
+    }
     operator = btn.textContent;
-    console.log(`operator: ${operator}`);
+    console.log(`operator: ${operator}`); // console.log
     term1 = +(term1);
     displayExpr.textContent += btn.textContent;
   });
