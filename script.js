@@ -48,14 +48,14 @@ for(const btn of opBtns) {
   }
 
   btn.addEventListener('click', () => {
-    if(term2 !== '') term2 = +(term2);
-
-    if((typeof term2) === 'number'){
+    if(term2 !== '') {
+      term2 = +(term2);
       equalBtn.click();
       displayExpr.textContent = ans;
       term1 = ans;
       term2 = '';
     }
+
     operator = btn.textContent;
     console.log(`operator: ${operator}`); // console.log
     term1 = +(term1);
