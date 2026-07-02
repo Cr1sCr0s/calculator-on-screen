@@ -122,6 +122,18 @@ for(const btn of opBtns) {
   });
 }  
 
+const btns = makeArray(getBtns('.calcu-btns'));
+
+document.addEventListener("keydown", (evt) => {
+  const keyName = evt.key;
+  // console.log(keyName);
+
+  for(const btn of btns) {
+    if(btn.textContent === keyName || btn.value === keyName)
+      btn.dispatchEvent(new MouseEvent('mousedown'));
+  }
+});
+
 function operate(operator, term1, term2) {
   switch(operator) {
     case '+':
