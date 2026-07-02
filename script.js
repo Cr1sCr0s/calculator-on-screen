@@ -76,7 +76,8 @@ for(const btn of opBtns) {
 
       const hasOperator = !(operator === '');
       if(hasOperator)
-        displayExpr.textContent = removeLastChar(displayExpr.textContent);
+        displayExpr.textContent = 
+          removeLastChar(displayExpr.textContent);
 
       const hasTerm2 = !(term2 === '');
       if(hasTerm2) {  
