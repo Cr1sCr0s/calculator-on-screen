@@ -51,7 +51,7 @@ button {
   justify-content: space-between;
   align-items: stretch;
   max-height: 14rem;
-  min-height: 9rem;
+  min-height: 10rem;
   padding: 1rem;
 
   color: rgb(85, 227, 85);
@@ -63,6 +63,7 @@ button {
 .calcu-expr {
   display: flex;
   align-items: center;
+  overflow-x: auto;
 }
 
 .calcu-result {
@@ -70,6 +71,7 @@ button {
 
   display: flex;
   align-items: center;
+  overflow-x: auto;
 }
 
 .calcu-btns {
