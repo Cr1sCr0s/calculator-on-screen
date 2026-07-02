@@ -41,13 +41,35 @@ for(const btn of opBtns) {
   btn.addEventListener('mousedown', (evt) => {
     const clickedAc = (evt.target.textContent === 'AC');
     const clickedEqual = (evt.target.textContent === '=');
+    const clickedBackspace = (evt.target.textContent === '⬅');
 
-    if(clickedAc) {
+    if(clickedBackspace) {
+      const hasTerm1 = !(term1 === '');
+      const hasOperator = !(operator === '');
+      const hasTerm2 = !(term2 === '');
+
+      if(hasTerm2) {
+        if(typeof term2 === 'number') term2 = term2.toString();
+        term2 = removeLastChar(term2);
+
+      }else if(hasOperator) {
+        operator = removeLastChar(operator);
+
+      }else if(hasTerm1) {
+        if(typeof term1 === 'number') term1 = term1.toString();
+        term1 = removeLastChar(term1);
+      }
+      ans = 0;
+      displayResult.textContent = '';
+      displayExpr.textContent = 
+        removeLastChar(displayExpr.textContent);
+  
+    }else if(clickedAc) {
       displayExpr.textContent = '';
       displayResult.textContent = '';
       term1 = operator = term2 = '';
       ans = 0;
-  
+
     }else if(clickedEqual) {
       const isExpression = !(operator === '');
       if(!(isExpression)) return;
