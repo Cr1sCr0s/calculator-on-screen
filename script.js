@@ -6,7 +6,7 @@ const displayExpr = document.querySelector('.calcu-expr');
 const digitBtns = makeArray(getBtns('.calcu-input'));
 
 for(const btn of digitBtns) {
-  btn.addEventListener('click', (evt) => {
+  btn.addEventListener('mousedown', (evt) => {
 
     const inTerm1 = ((typeof term1) === 'string');
     const inTerm2 = ((typeof term1) === 'number');
@@ -39,7 +39,7 @@ const acBtn = document.querySelector('.calcu-all-clear');
 let ans = 0;
 
 for(const btn of opBtns) {
-  btn.addEventListener('click', (evt) => {
+  btn.addEventListener('mousedown', (evt) => {
     const clickedAc = (evt.target.textContent === 'AC');
     const clickedEqual = (evt.target.textContent === '=');
 
