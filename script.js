@@ -64,8 +64,8 @@ for(const btn of opBtns) {
         return;
       }
 
-      const isDecimal = !(Number.isInteger(ans));
-      if(isDecimal) ans = ans.toFixed(2);
+      // const isDecimal = !(Number.isInteger(ans));
+      // if(isDecimal) ans = ans.toFixed(2);
 
       console.log(`ans: ${ans}`); // console.log
       displayResult.textContent = ans;
@@ -82,7 +82,7 @@ for(const btn of opBtns) {
       if(hasTerm2) {  
         term2 = +(term2);
         equalBtn.click(); 
-        
+
         const cleared = (term1 === '');
         if(cleared) return; // ac clicked
 
