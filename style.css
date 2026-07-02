@@ -83,6 +83,7 @@ button {
 
 .calcu-btns button {
   flex: 1;
+
   font-size: 3rem;
 }
 
@@ -107,9 +108,10 @@ button {
 }
 
 .calcu-input button {
+  max-width: 5rem;
+
   color: rgb(237, 237, 237);
   background-color: rgb(112, 112, 112);
-  max-width: 5rem;
 }
 
 .calcu-operations {
@@ -122,6 +124,7 @@ button {
 
 .calcu-operations button {
   color: rgb(237, 237, 237);
+  
   background-color: rgb(16, 16, 16);
 }
 
