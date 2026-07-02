@@ -111,6 +111,7 @@ for(const btn of opBtns) {
         displayExpr.textContent = ans;
         term1 = ans;
         term2 = '';
+        ans = 0;
       }
   
       operator = btn.textContent;
