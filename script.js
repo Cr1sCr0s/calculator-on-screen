@@ -63,8 +63,8 @@ for(const btn of opBtns) {
         return;
       }
 
-      // const isDecimal = !(Number.isInteger(ans));
-      // if(isDecimal) ans = ans.toFixed(2);
+      const isDecimal = !(Number.isInteger(ans));
+      if(isDecimal) ans = ans.toFixed(2);
 
       console.log(`ans: ${ans}`); // console.log
       displayResult.textContent = ans;
