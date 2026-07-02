@@ -66,9 +66,12 @@ button {
   overflow-x: auto;
 }
 
-.calcu-result {
-  align-self: end;
+.calcu-display div {
+  display: flex;
+  justify-content: end;
+}
 
+.calcu-result {
   display: flex;
   align-items: center;
   overflow-x: auto;
