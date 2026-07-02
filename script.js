@@ -18,7 +18,6 @@ for(const btn of digitBtns) {
       term1 += btn.textContent;
       console.log(`term1: ${term1}`); // console.log
       displayExpr.textContent += btn.textContent;
-
     }
     
     if(inTerm2) {
@@ -59,7 +58,7 @@ for(const btn of opBtns) {
       ans = operate(operator, term1, term2);
 
       if(ans === 'divBy0'){
-        acBtn.click();
+        acBtn.dispatchEvent(new MouseEvent('mousedown'));;
         displayResult.textContent = 'Nice try loser';
         return;
       }
@@ -80,9 +79,9 @@ for(const btn of opBtns) {
           removeLastChar(displayExpr.textContent);
 
       const hasTerm2 = !(term2 === '');
-      if(hasTerm2) {  
+      if(hasTerm2) {
         term2 = +(term2);
-        equalBtn.click(); 
+        equalBtn.dispatchEvent(new MouseEvent('mousedown'));
 
         const cleared = (term1 === '');
         if(cleared) return; // ac clicked
